@@ -58,7 +58,11 @@ Scikit-learn: Scikit-learn is a popular Python library for machine learning. It 
 
 We are going to extract the live tweets to prepare our own dataset. Using the nltk toolkit we assign a sentiment score to respective tweets. This helps us to know the sentiment of an individual tweet.
 This is just a sample hashtag I used to retrieve the tweets. I took in 2000 tweets, this depends on our processing power, and tweepy has a restriction to retrieve a certain number of tweets in one take. Or else the account will be suspended.
+![image](https://user-images.githubusercontent.com/83261877/228514220-3b0a0905-ab2d-4834-a1e7-f5e19f9ff4c1.png)
 
+![image](https://user-images.githubusercontent.com/83261877/228513904-70400356-707f-472d-8598-ff7d07edf358.png)
+
+![image](https://user-images.githubusercontent.com/83261877/228514329-bb215def-e4a2-459f-922a-41255c18b506.png)
 
 we are going to set up the Twitter API authentication using the provided consumer key, consumer secret, access token, and access token secret. It then prompts the user to enter a keyword or hashtag to search and the number of tweets to analyze. It uses the Tweepy library to search for the specified number of tweets containing the keyword or hashtag and stores them in a pandas DataFrame called tweet_list.
 
