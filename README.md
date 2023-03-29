@@ -34,7 +34,7 @@ Model Building
 Model Evaluation
 
 
-#DATA COLLECTION:
+DATA COLLECTION:
 
 For data collection in this project, I used the Tweepy library to retrieve live tweets from Twitter based on specific keywords and the desired number of tweets. To access the Twitter API, I created a Twitter developer account and obtained the necessary access keys and tokens. After that, I created a Python script using Tweepy to connect to the Twitter API and retrieve tweets containing the target keywords. Overall, the Tweepy library and the Twitter API made the data collection process efficient and straightforward, allowing me to obtain a sufficient amount of high-quality data for analysis.
 
@@ -58,4 +58,25 @@ Scikit-learn: Scikit-learn is a popular Python library for machine learning. It 
 
 We are going to extract the live tweets to prepare our own dataset. Using the nltk toolkit we assign a sentiment score to respective tweets. This helps us to know the sentiment of an individual tweet.
 This is just a sample hashtag I used to retrieve the tweets. I took in 2000 tweets, this depends on our processing power, and tweepy has a restriction to retrieve a certain number of tweets in one take. Or else the account will be suspended.
+
+
+we are going to set up the Twitter API authentication using the provided consumer key, consumer secret, access token, and access token secret. It then prompts the user to enter a keyword or hashtag to search and the number of tweets to analyze. It uses the Tweepy library to search for the specified number of tweets containing the keyword or hashtag and stores them in a pandas DataFrame called tweet_list.
+
+
+The sentiment analysis is performed on each tweet using TextBlob and SentimentIntensityAnalyzer from the NLTK library. The sentiment score for each tweet is assigned as either positive (4), negative (0), or neutral (2) based on the compound score returned by SentimentIntensityAnalyzer. The percentage of positive, negative, and neutral tweets and the overall polarity score are calculated and printed.
+
+
+Finally, the number of positive, negative, and neutral tweets is printed along with the total number of tweets analyzed.
+
+
+The code segment first performs some basic operations on the tweet_list dataframe, including checking its shape, info, and data types. Then, it converts the sentiment_score column to an integer data type and checks the unique values of that column. It then creates a bar plot of the sentiment score distribution using the Seaborn library. The code then creates three new dataframes based on the sentiment scores (positive, negative, and neutral). It concatenates these dataframes to create a new dataset. Finally, it converts all the text in the 'text' column to lowercase.
+
+
+This is a code that involves several text preprocessing steps to clean up a dataset's textual data. The code begins by defining a list of stop words that will be removed from the text data. Then, a function is defined to remove the stop words from the text data. The next step involves removing punctuation from the text data using a similar function. The following steps remove repeating characters, URLs, and numbers from the text data. Then, the data is tokenized using the regular expression tokenizer. Next, stemming is performed using the Porter stemming algorithm, followed by lemmatization using the WordNet lemmatizer. Each step modifies the dataset's 'text' column using the 'apply' function.
+
+
+This code seems to be training and evaluating two different models, Bernoulli Naive Bayes and Linear Support Vector Classifier (SVC), for sentiment analysis task. The code first separates the input text data and corresponding sentiment scores into training and testing sets using train_test_split method from sklearn.model_selection. Then it applies TF-IDF vectorization on the text data using TfidfVectorizer from sklearn.feature_extraction.text. The resulting sparse matrix is used to train the two models, and evaluate their performance using classification_report and confusion_matrix from sklearn.metrics. The confusion matrix is also plotted as a heatmap using seaborn library.
+
+
+The Bernoulli Naive Bayes model is trained using BernoulliNB from sklearn.naive_bayes and the Linear SVC model is trained using LinearSVC from sklearn.svm. The trained models are evaluated on the test data by calling the model_Evaluate function which prints out the classification report and plots the confusion matrix. Finally, the predictions made by both models on the test data are stored in y_pred1 and y_pred2 respectively.
 
